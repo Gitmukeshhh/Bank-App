@@ -66,7 +66,9 @@ public class SBI implements BankInterface {
 
     @Override
     public String addMony(double amount) {
+
         balance+=amount;
+        System.out.println("ADD BAL-->"+ balance);
         return "UPPDATE BALANCES";
     }
 
@@ -77,7 +79,8 @@ public class SBI implements BankInterface {
                  System.out.println(balance-amount);
                  return "sorry bro no mony";
              }else{
-                 balance-=balance;
+                 balance-=amount;
+                 System.out.println("withdwaw-->"+ balance);
                  return "PAISA HE PASIA";
              }
 
@@ -88,6 +91,7 @@ public class SBI implements BankInterface {
 
     @Override
     public double calculateInterest(int years) {
+        System.out.println("INTREST--->");
         return (balance*years*rateOfInterest)/100;
     }
 }
